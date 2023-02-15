@@ -21,7 +21,7 @@ function AuthProvider({ children }) {
 
   const resetPassword = (email) => {
     return auth.sendPasswordResetEmail(email);
-  }
+  };
 
   useEffect(() => {
     const clearUser = auth.onAuthStateChanged((usr) => {

@@ -27,6 +27,7 @@ const firestore = firebase.firestore();
 //database schema for firestore
 const database = {
   users: firestore.collection("users"),
+  posts:firestore.collection("posts"),
   getTimeStamp: firebase.firestore.FieldValue.serverTimestamp
 };
 
