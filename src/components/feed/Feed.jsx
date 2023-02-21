@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { database } from "../../services/firebase";
 import { AuthContext } from "../../contexts/AuthContext";
 import Upload from "../upload/Upload";
+import Posts from "../posts/Posts";
 export default function Feed() {
   //state management
   const [userInfo, setUserInfo] = useState(null);
@@ -23,6 +24,7 @@ export default function Feed() {
         <button onClick={logout}>Logout</button>
       </div>
       <Upload user={userInfo} />
+      <Posts user={userInfo} />
     </div>
   );
 }

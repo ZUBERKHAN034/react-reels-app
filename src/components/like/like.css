@@ -1,0 +1,14 @@
+.icon-styling {
+  position: absolute;
+  bottom: 5%;
+  left: 85%;
+}
+
+.like{
+    cursor: pointer;
+    color: #e74c3c;
+}
+.unlike{
+    cursor: pointer;
+    color: white;
+}

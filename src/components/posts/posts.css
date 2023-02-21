@@ -1,0 +1,30 @@
+.video-container {
+  height: 81vh;
+  border-radius: 20px;
+  background-color: white;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+
+.video-container::-webkit-scrollbar {
+  display: none;
+}
+
+.videos {
+  position: relative;
+}
+
+.user-profile {
+  display: flex;
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+}
+
+.user-profile > h4 {
+  margin: 0;
+  margin-top: 3%;
+  margin-left: 25%;
+  color: white;
+}
