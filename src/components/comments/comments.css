@@ -1,0 +1,9 @@
+.posted-comment {
+  display: flex;
+  border: 1px solid lightgray;
+  padding: 0.5rem;
+}
+
+span {
+  font-weight: bold;
+}

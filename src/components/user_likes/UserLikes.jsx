@@ -1,9 +1,9 @@
-import "./like.css";
+import "./userLikes.css";
 import React, { useEffect, useState } from "react";
 import { database } from "../../services/firebase";
 import Favorite from "@mui/icons-material/Favorite";
 
-export default function Like({ user, post }) {
+export default function UserLikes({ user, post }) {
   const [like, setLike] = useState(false);
 
   useEffect(() => {
@@ -26,11 +26,11 @@ export default function Like({ user, post }) {
   };
 
   return (
-    <div>
+    <div className="user-likes">
       {like ? (
-        <Favorite className={`icon-styling like`} onClick={handleLike} />
+        <Favorite className={`user-like`} onClick={handleLike} />
       ) : (
-        <Favorite className={`icon-styling unlike`} onClick={handleLike} />
+        <Favorite className={`user-unlike`} onClick={handleLike} />
       )}
     </div>
   );

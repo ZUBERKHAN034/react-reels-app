@@ -1,5 +1,5 @@
 import "./feed.css";
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { database } from "../../services/firebase";
 import { AuthContext } from "../../contexts/AuthContext";
 import Upload from "../upload/Upload";
