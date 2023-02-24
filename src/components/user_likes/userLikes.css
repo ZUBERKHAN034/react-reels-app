@@ -1,0 +1,15 @@
+.user-likes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-like {
+  padding: 1rem;
+  cursor: pointer;
+  color: #e74c3c;
+}
+.user-unlike {
+  padding: 1rem;
+  cursor: pointer;
+  color: black;
+}

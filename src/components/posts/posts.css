@@ -28,3 +28,44 @@
   margin-left: 25%;
   color: white;
 }
+
+.chat-styling {
+  display: flex;
+  position: absolute;
+  bottom: 5%;
+  left: 75%;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.video-modal {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment-modal {
+  width: 50%;
+  height: 100%;
+}
+
+.video-modal video {
+  height: 85vh;
+}
+
+.likes-container {
+  display: flex;
+}
+
+.all-comments {
+  padding: 1rem;
+  height: 72vh;
+}

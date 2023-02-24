@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import Protected from "./routes/Protected";
@@ -14,12 +15,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/resetpassword" element={<ResetPassword />} />
-          <Route
-            path="/"
-            element={
-              <Protected Component={<Feed/>}/>
-            }
-          />
+          <Route path="/" element={<Protected Component={<Feed />} />} />
         </Routes>
       </AuthProvider>
     </Router>

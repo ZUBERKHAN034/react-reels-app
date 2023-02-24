@@ -15,8 +15,8 @@ import TextField from "@mui/material/TextField";
 import { Button, CardActions } from "@mui/material";
 import { createUseStyles } from "react-jss";
 import { CarouselProvider, Slider, Slide, Image } from "pure-react-carousel";
-import { Link ,useNavigate} from "react-router-dom";
-import { useState,useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Login() {
@@ -46,7 +46,7 @@ export default function Login() {
     password: "",
     email: "",
   });
-  const [error,setError] = useState(null);
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -60,22 +60,22 @@ export default function Login() {
   };
 
   const handleClick = async () => {
-  try {
-    setError(null);
-    setLoading(true);
-    const {email, password} = credentials;
-    await login(email, password);
-    setLoading(false);
-    navigate('/');
-  } catch (error) {
-      setError({ message: error.message }); 
+    try {
+      setError(null);
+      setLoading(true);
+      const { email, password } = credentials;
+      await login(email, password);
+      setLoading(false);
+      navigate("/");
+    } catch (error) {
+      setError({ message: error.message });
       setTimeout(() => setError(null), 4000);
       setLoading(false);
       return;
-  }
+    }
   };
 
-  const handleForgotPassword = () => navigate('/resetpassword');
+  const handleForgotPassword = () => navigate("/resetpassword");
 
   return (
     <div className="login-container">
@@ -121,11 +121,7 @@ export default function Login() {
             <img src={logo} alt="logo" />
           </div>
           <CardContent>
-            {error !== null && (
-              <Alert severity="error">
-               {error.message}
-              </Alert>
-            )}
+            {error !== null && <Alert severity="error">{error.message}</Alert>}
             <TextField
               id="outlined-basic"
               label="Email"
@@ -160,7 +156,13 @@ export default function Login() {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button color="primary" fullWidth={true} variant="contained" disabled={loading} onClick={handleClick}>
+            <Button
+              color="primary"
+              fullWidth={true}
+              variant="contained"
+              disabled={loading}
+              onClick={handleClick}
+            >
               LOGIN
             </Button>
           </CardActions>

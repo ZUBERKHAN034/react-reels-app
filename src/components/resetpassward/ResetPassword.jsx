@@ -8,7 +8,7 @@ import TextField from "@mui/material/TextField";
 import { Button, CardActions } from "@mui/material";
 import { createUseStyles } from "react-jss";
 import { AuthContext } from "../../contexts/AuthContext";
-import { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 export default function ResetPassword() {
