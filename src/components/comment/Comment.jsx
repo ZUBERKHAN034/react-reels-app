@@ -17,7 +17,7 @@ export default function Comment({ user, post }) {
       userProfileUrl: user.profileUrl,
       userName: user.fullName,
     };
-
+    console.log("comment", newComment, "post.id", post.id);
     database.comments.add(newComment).then((comment) => {
       database.posts.doc(post.id).update({
         comments: [...post.comments, comment.id],

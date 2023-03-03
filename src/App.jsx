@@ -6,6 +6,7 @@ import Signup from "./components/signup/Signup";
 import Login from "./components/login/Login";
 import Feed from "./components/feed/Feed";
 import ResetPassword from "./components/resetpassward/ResetPassword";
+import Profile from "./components/profile/Profile";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/resetpassword" element={<ResetPassword />} />
+          <Route path="/profile/:id" element={<Protected Component={<Profile/>} />} />
           <Route path="/" element={<Protected Component={<Feed />} />} />
         </Routes>
       </AuthProvider>

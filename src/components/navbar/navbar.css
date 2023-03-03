@@ -1,0 +1,11 @@
+.nav-insta-logo {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-insta-logo img {
+    margin-left: -30%;
+    width: 10vw;
+    cursor: pointer;
+  }
