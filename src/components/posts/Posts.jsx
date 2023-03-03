@@ -35,6 +35,29 @@ export default function Posts({ user }) {
     return clearUser;
   }, []);
 
+  const cb = (entries) => {
+    entries.forEach((entry) => {
+      const element = entry.target.childNodes[0];
+      element.play().then(() => {
+        if (!element.paused && !entry.isIntersecting) {
+          element.pause();
+        }
+      });
+    });
+  };
+
+  const observer = new IntersectionObserver(cb, { threshold: 0.6 });
+
+  useEffect(() => {
+    const element = document.querySelectorAll(".videos");
+    element.forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, [posts]);
+
+
   const handleClickOpen = (id) => {
     setOpen(id);
   };

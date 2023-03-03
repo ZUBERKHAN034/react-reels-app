@@ -68,7 +68,7 @@ export default function Upload({ user }) {
               .then(async (post) => {
                 await database.users.doc(user.userId).update({
                   postIds:
-                    user.postIds !== null
+                    user.postIds.length !== 0
                       ? [...user.postIds, post.id]
                       : [post.id],
                 });
@@ -76,6 +76,7 @@ export default function Upload({ user }) {
               .then(() => {
                 setLoading(false);
               })
+
               .catch((error) => {
                 setError({ message: error.message });
                 setTimeout(() => setError(null), 4000);
@@ -100,7 +101,7 @@ export default function Upload({ user }) {
   };
 
   return (
-    <div>
+    <div style={{ marginTop: "5rem", marginBottom: "1rem" }}>
       {error !== null && <Alert severity="error">{error.message}</Alert>}
       <div>
         <input

@@ -4,6 +4,7 @@ import { database } from "../../services/firebase";
 import { AuthContext } from "../../contexts/AuthContext";
 import Upload from "../upload/Upload";
 import Posts from "../posts/Posts";
+import Navbar from "../navbar/Navbar";
 export default function Feed() {
   //state management
   const [userInfo, setUserInfo] = useState(null);
@@ -19,10 +20,11 @@ export default function Feed() {
 
   return (
     <div className="feed-container ">
-      <div className="feed-card">
+      {userInfo !== null && <Navbar user={userInfo} logout={logout} />}
+      {/* <div className="feed-card">
         <h1>Feed</h1>
         <button onClick={logout}>Logout</button>
-      </div>
+      </div> */}
       <Upload user={userInfo} />
       <Posts user={userInfo} />
     </div>

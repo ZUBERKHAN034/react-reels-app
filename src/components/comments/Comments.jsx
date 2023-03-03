@@ -19,15 +19,14 @@ export default function Comments({ post }) {
     fetchComments();
   }, [post]);
 
-  console.log;
   return (
     <div>
       {comments === null ? (
         <CircularProgress />
       ) : (
-        comments.map((comment) => {
+        comments.map((comment, index) => {
           return (
-            <div className="posted-comment">
+            <div className="posted-comment" key={index}>
               <Avatar src={comment.userProfileUrl} />
               <p>
                 &nbsp;&nbsp;<span>{comment.userName}</span>&nbsp;&nbsp;

@@ -83,12 +83,12 @@ export default function Signup() {
         },
         () => {
           uploadTask.snapshot.ref.getDownloadURL().then((url) => {
-            console.log(url);
             const params = {
               email: email,
               userId: uid,
               fullName: name,
               profileUrl: url,
+              postIds: [],
               createdAt: database.getTimeStamp(),
             };
             database.users.doc(uid).set(params);

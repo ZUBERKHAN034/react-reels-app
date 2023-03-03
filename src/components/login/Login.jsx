@@ -22,7 +22,6 @@ import { AuthContext } from "../../contexts/AuthContext";
 export default function Login() {
   // Context Global Store by context-api
   const store = useContext(AuthContext);
-  console.log(store);
 
   // Material UI components styling
   const useStyles = createUseStyles({
